@@ -53,6 +53,16 @@ a {
   color: inherit;
 }
 
+button,
+input {
+  border: none;
+  padding: 0;
+}
+
+button {
+  background-color: transparent;
+}
+
 a,
 button,
 input,
