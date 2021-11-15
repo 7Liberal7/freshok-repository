@@ -278,6 +278,7 @@
     "transfob": "^1.0.0",
     "type": "^1.2.0",
     "typedarray": "^0.0.6",
+    "ulp": "^1.0.1",
     "unc-path-regex": "^0.1.2",
     "undertaker": "^1.3.0",
     "undertaker-registry": "^1.0.1",
