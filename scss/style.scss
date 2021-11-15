@@ -1,0 +1,778 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'global';
+
+.header {
+  &__top {
+    padding: 13.5px 0;
+    background-color: $dark-800;
+    // там от разных элементов разные паддинги, поэтому написал высоту
+    font-size: 13px;
+    line-height: 1;
+    color: $white;
+    @extend %open-sans-bold-700;
+  }
+
+  &__top-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__info-item:not(:last-child) {
+    margin-right: 55px;
+  }
+
+  &__info-item__link {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+
+    // просто color поставил и чет не работает поэтому all
+    &:hover {
+      color: $white;
+      opacity: 70%;
+    }
+
+    &:active {
+      color: $green-200;
+    }
+  }
+
+  &__info-img {
+    margin-right: 12px;
+  }
+
+  &__about-list,
+  &__info-list {
+    display: flex;
+  }
+
+  &__about-item:not(:last-child) {
+    margin-right: 24px;
+  }
+
+  &__about__link {
+    transition: box-shadow 0.3s ease-in-out;
+
+    &:focus {
+      box-shadow: 0 0 0 3px;
+      border-radius: 5px;
+    }
+  }
+
+  &__content {
+    background-color: $green-900;
+    padding: 25px;
+    @extend %open-sans-semibold-600;
+  }
+
+  &__content-inner {
+    display: flex;
+    line-height: 1.4;
+    align-items: center;
+  }
+
+  &__catalog {
+    max-width: 240px;
+    width: 100%;
+    border-radius: 5px;
+    height: 50px;
+    background-color: $white;
+    position: relative;
+    cursor: pointer;
+    margin-right: 30px;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $green-200;
+    }
+
+    &-burger {
+      width: 20px;
+      top: 24px;
+      left: 18px;
+      z-index: 10;
+    }
+
+    &-burger,
+    &-burger::after,
+    &-burger::before {
+      position: absolute;
+      background-color: $green-900;
+      content: "";
+      height: 1px;
+    }
+
+    &-burger::after,
+    &-burger::before {
+      width: 25px;
+      top: 7px;
+      left: 0;
+    }
+
+    &-burger::after {
+      top: -7px;
+    }
+  }
+
+  &__products {
+    font-size: 14px;
+    color: $green-900;
+    padding: 15px 0 15px 15px;
+
+    &::after,
+    &::before {
+      position: absolute;
+      height: 1px;
+      width: 7px;
+      background-color: $green-900;
+      content: "";
+      top: 25px;
+      right: 20px;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+      right: 16px;
+    }
+  }
+
+  &__images-list {
+    display: flex;
+
+    &__item {
+      cursor: pointer;
+      height: 32px;
+      width: 30px;
+      position: relative;
+      transition: box-shadow 0.3s ease-in-out;
+
+      &:hover {
+        opacity: 60%;
+        color: $white;
+      }
+
+      &:active {
+        opacity: 10%;
+      }
+    }
+
+    &__link {
+      transition: box-shadow 0.3s ease-in-out;
+      display: block;
+      padding-top: 5px;
+      color: $white;
+      width: 35px;
+      height: 35px;
+
+      &:focus {
+        box-shadow: 0 0 0 3px;
+        border-radius: 5px;
+      }
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    &__item:not(:first-child)::after {
+      content: "";
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: $white;
+      position: absolute;
+      top: -6px;
+      left: -7px;
+    }
+
+    &__number {
+      content: "";
+      color: $red-900;
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      font-size: 10px;
+      z-index: 10;
+    }
+  }
+}
+
+
+.logo {
+  display: flex;
+  margin-right: 40px;
+  max-width: 186px;
+  width: 100%;
+
+  &__text {
+    color: $white;
+    @extend %ruda-semibold-600;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  &__title {
+    font-size: 26px;
+    padding-top: 7px;
+  }
+
+  &__subtitle {
+    font-size: 11px;
+    padding-left: 10px;
+  }
+
+}
+
+.search-form {
+  height: 50px;
+  max-width: 576px;
+  width: 100%;
+  display: flex;
+  position: relative;
+  height: 50px;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-right: 58px;
+
+  &::after {
+    width: 20px;
+    height: 20px;
+    background-image: url("../images/search.svg");
+    content: "";
+    position: absolute;
+    left: 13px;
+    top: 15px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+
+    // а не как у афтера не сделать? это же вроде не контентное изображение
+    &:active {
+      opacity: 50%;
+
+    }
+  }
+
+  &__input {
+    position: relative;
+    padding: 15px 15px 15px 51px;
+    width: 100%;
+    color: $dark-800;
+    @extend %open-sans-regular-400;
+  }
+
+  &__btn {
+    padding: 15px 52px;
+    @extend %ruda-semibold-600;
+    color: $white;
+    background-color: $dark-800;
+    border-radius: 5px;
+    cursor: pointer;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    font-size: 14px;
+  }
+}
+
+.slick-btn {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  border-radius: 5px;
+
+  &:disabled {
+    color: $silver-600;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 3px $green-900;
+  }
+
+  &:hover {
+    fill: $green-900;
+    background-color: $green-200;
+  }
+
+  &:active {
+    color: $green-900;
+    background-color: #F3F3F2;
+  }
+}
+
+.slick-prev {
+  left: 50px;
+}
+
+.slick-next {
+  right: 50px;
+}
+
+.discounts {
+
+  &__list {
+    min-height: 600px;
+  }
+
+  &__item {
+    min-height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 102;
+    display: flex;
+    align-items: center;
+    padding-top: 142px;
+    // не понял что его перебивает, наверно в slick файл чет хз,
+    // у меня js подключен ниже slick, но подругому не работало
+    // из всех способов приходит на ум только написать костыль на js
+  }
+
+  &__item-wrapper {
+    max-width: 1290px;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 315px;
+    position: relative;
+    z-index: 100;
+    padding: 24px 19px;
+
+    &::after {
+      background-color: rgba(255, 255, 255, 0.8);
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: -1;
+      position: absolute;
+    }
+  }
+
+  &__title,
+  &__subtitle {
+    @extend %ruda-black-900;
+    font-size: 60px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: $red-900;
+    display: block;
+    max-width: 950px;
+    // 100% pixel perfect, из-за бага с шрифтом связаны
+  }
+
+  &__subtitle {
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    @extend %ruda-black-900;
+    color: $dark-500;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.4;
+    color: $dark-500;
+    padding-bottom: 35px;
+  }
+
+}
+
+.info {
+  background-color: $silver-100;
+  padding: 48px 0 29px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    // margin: 0 auto;
+    // не заработало
+  }
+
+  &__item {
+    max-width: 285px;
+    width: 100%;
+    color: $dark-500;
+    position: relative;
+    padding-left: 80px;
+
+    &::after {
+      content: "";
+      width: 50px;
+      position: absolute;
+      height: 50px;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 49px;
+
+    &::after {
+      background-image: url("../images/info/return-box.svg");
+      left: 2px;
+    }
+  }
+
+  &__item:last-child {
+    margin-right: auto;
+
+    &::after {
+      background-image: url("../images/info/24-hours.svg");
+    }
+  }
+
+  &__item:first-child {
+    margin-left: auto;
+    padding-left: 90px;
+    max-width: 300px;
+
+    &::after {
+      background-image: url("../images/info/scooter.svg");
+      left: 26px;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    @extend %open-sans-semibold-600;
+    margin-bottom: 8px;
+    color: $dark-900;
+  }
+
+}
+
+.gallery {
+  text-align: center;
+
+  &-list {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: left;
+    margin-bottom: 48px;
+
+    &__item {
+      border: 1px solid rgba(17, 17, 17, 0.2);
+      border-radius: 5px;
+      width: 300px;
+      height: 409px;
+      position: relative;
+
+      &::after,
+      &::before {
+        width: 32px;
+        content: "";
+        position: absolute;
+      }
+
+
+      &::after {
+        height: 28px;
+        background-image: url("../images/gallery/love.svg");
+        top: 17px;
+        right: 12px;
+      }
+
+      &::before {
+        height: 32px;
+        background-image: url("../images/gallery/cart.svg");
+        bottom: 15px;
+        right: 17px;
+      }
+
+      &__wrapper {
+        padding: 25px 37px 18px 18px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        max-height: 143px;
+        height: 100%;
+      }
+    }
+
+    &__item--new,
+    &__item--popular,
+    &__item--discount {
+      position: absolute;
+      padding: 2px 8px;
+      text-transform: uppercase;
+      height: 16px;
+      border-radius: 5px;
+      color: $white;
+      font-size: 10px;
+      @extend %open-sans-bold-700;
+      top: 13px;
+      left: 11px;
+    }
+
+    &__item--new {
+      background-color: $green-900;
+      width: 66px;
+    }
+
+    &__item--popular {
+      background-color: $orange-900;
+      width: 34px;
+    }
+
+    &__item--discount {
+      background-color: $red-900;
+      width: 37px;
+    }
+
+    &__item--discount2 {
+      top: 35px;
+    }
+
+    &__img {
+      width: 300px;
+      height: 267px;
+      color: $dark-900;
+      padding-top: 57px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &__text {
+      line-height: 1;
+      color: $dark-500;
+
+      &-span {
+        position: relative;
+        color: $silver-600;
+        @extend %open-sans-regular-400;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 39px;
+          height: 1px;
+          background-color: $silver-600;
+          transform: rotate(-15deg);
+          bottom: 8px;
+          left: 0
+        }
+      }
+
+      &__info {
+        @extend %open-sans-regular-400;
+        line-height: 1;
+      }
+    }
+
+    &__title {
+      font-size: 14px;
+      // чет не унаследовал размер от даби
+    }
+  }
+
+  &__btn {
+    color: $green-900;
+    background-color: $white;
+    border: 1px solid;
+
+    &:focus {
+      box-shadow: 0 0 0 3px $green-900;
+    }
+  }
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  justify-content: center;
+
+  &__item:not(:last-child) {
+    margin-right: 24px;
+  }
+
+  &__btn {
+    @extend %open-sans-bold-700;
+    font-size: 15px;
+    color: #505050;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      color: $green-900;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px $green-200;
+      border-radius: 5px;
+    }
+
+    &:active {
+      border-bottom: 3px solid $green-200;
+    }
+  }
+
+
+}
+
+.mixitup-control-active {
+  border-bottom: 3px solid $green-200;
+}
+
+.form {
+  line-height: 1;
+
+  &__label {
+    display: block;
+    margin-bottom: 18px;
+  }
+
+  &__input {
+    height: 40px;
+    max-width: 180px;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  &__input,
+  &__input::placeholder {
+    padding: 12px 6px;
+  }
+
+  &__btn {
+    height: 40px;
+    font-size: 12px;
+    @extend %open-sans-bold-700;
+    border-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 126px;
+  }
+
+  &__submit {
+    display: flex;
+  }
+
+}
+
+.footer {
+  background-color: #31352B;
+  color: $white;
+  padding-top: 30px;
+  z-index: 10;
+  position: relative;
+
+  &::before {
+    content: "";
+    z-index: -1;
+    width: 100%;
+    max-width: 2500px;
+    height: 1px;
+    background-color: $white;
+    position: absolute;
+    top: 260px;
+    opacity: 10%;
+  }
+
+  &__link {
+    transition: box-shadow 0.3s ease-in-out;
+
+    &:focus {
+      box-shadow: 0 0 0 3px;
+      border-radius: 5px;
+    }
+  }
+
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+  }
+
+  &__bottom {
+    padding: 23px 0 27px;
+    display: flex;
+    justify-content: space-between;
+
+    &__list {
+      width: 166px;
+      display: flex;
+    }
+
+    &__item {
+      position: relative;
+      margin-right: 95px;
+    }
+
+    &__link {
+      position: absolute;
+      width: 49px;
+      height: 29px;
+      top: -5px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &__link:first-child {
+      width: 93px;
+    }
+  }
+
+  &__about {
+    display: flex;
+    max-width: 467px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__phone,
+  &__address,
+  &__item {
+    margin-bottom: 20px;
+  }
+
+  &__info-list {
+    display: flex;
+    justify-content: space-between;
+    width: 128px;
+
+    &__link {
+      width: 32px;
+      height: 32px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      transition: opacity box-shadow 0.3s ease-in-out;
+      display: block;
+
+      &:hover {
+        opacity: 50%;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 3px $green-200;
+        border-radius: 5px;
+      }
+
+      &:active {
+        fill: $green-200;
+        // color: $green-200;
+        // background-color: $green-200;
+        // чет тут тоже хз, наверно надо через афтер вешать
+      }
+    }
+  }
+}
+
+
+
+
+@import 'media'
