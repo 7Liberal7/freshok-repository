@@ -18,25 +18,25 @@
           <ul class="header__info-list">
             <li class="header__info-item">
               <a href="#" class="header__info-item__link">
-                <img src="images/address.svg" alt="машина доставка">
+                <img class="header__info-img" src="images/address.svg" alt="машина доставка">
                 <p>АДРЕС И ВРЕМЯ ДОСТАВКИ</p>
               </a>
             <li class="header__info-item">
               <a href="#" class="header__info-item__link">
-                <img src="images/tel.svg" alt="картинка телефона горячей линии">
+                <img class="header__info-img" src="images/tel.svg" alt="картинка телефона горячей линии">
                 <p>ГОРЯЧАЯ ЛИНИЯ 24/7</p>
               </a>
             </li>
           </ul>
           <ul class="header__about-list">
             <li class="header__about-item">
-              <a href="#">ДОСТАВКА</a>
+              <a class="header__about__link" href="#">ДОСТАВКА</a>
             </li>
             <li class="header__about-item">
-              <a href="#">О НАС</a>
+              <a class="header__about__link" href="#">О НАС</a>
             </li>
             <li class="header__about-item">
-              <a href="#">НОВОСТИ</a>
+              <a class="header__about__link" href="#">НОВОСТИ</a>
             </li>
           </ul>
         </div>
@@ -57,10 +57,9 @@
             <p class="header__products">Каталог продуктов</p>
           </button>
           <form class="search-form">
-            <!-- <img class="search-form__img" src="images/search.svg" alt="лупа"> -->
             <input class="search-form__input" type="text" name="text" placeholder="Найти в магазине ..." required>
             <!-- вроде же не надо id -->
-            <button class="search-form__btn" type="submit">ПОИСК </button>
+            <button class="search-form__btn btn" type="submit">ПОИСК </button>
           </form>
           <ul class="header__images-list">
             <li class="header__images-list__item">
@@ -75,8 +74,10 @@
               </a>
             </li>
             <li class="header__images-list__item">
-              <img class="header__images-list__img" src="images/cart.svg" alt="корзина">
-              <span class="header__images-list__number"></span>
+              <a class="header__images-list__link" href="#">
+                <img class="header__images-list__img" src="images/cart.svg" alt="корзина">
+                <span class="header__images-list__number"></span>
+              </a>
             </li>
           </ul>
         </div>
@@ -150,23 +151,23 @@
       <h2 class="title">Топовые товары</h2>
       <ul class="filters">
         <li class="filters__item">
-          <button class="filters__btn">Все товары</button>
+          <button class="filters__btn" type="button" data-filter="all">Все товары</button>
         </li>
         <li class="filters__item">
-          <button class="filters__btn">Фрукты</button>
+          <button class="filters__btn" type="button" data-filter=".category-fruits">Фрукты</button>
         </li>
         <li class="filters__item">
-          <button class="filters__btn">ОВОЩИ</button>
+          <button class="filters__btn" type="button" data-filter=".category-vegetables">ОВОЩИ</button>
         </li>
         <li class="filters__item">
-          <button class="filters__btn">Напитки</button>
+          <button class="filters__btn" type="button" data-filter=".category-drinks">Напитки</button>
         </li>
         <li class="filters__item">
-          <button class="filters__btn">БАКАЛЕЯ</button>
+          <button class="filters__btn" type="button" data-filter=".category-loose">БАКАЛЕЯ</button>
         </li>
       </ul>
       <ul class="gallery-list">
-        <li class="gallery-list__item">
+        <li class="gallery-list__item mix category-fruits">
           <button class="gallery-list__item--new">НОВИНКА</button>
           <button class="gallery-list__item--discount gallery-list__item--discount2">-50%</button>
           <img class="gallery-list__img" src="images/gallery/1.png" alt="Ананас">
@@ -178,14 +179,14 @@
             </div>
           </div>
         </li>
-        <li class="gallery-list__item">
+        <li class="gallery-list__item mix category-fruits">
           <img class="gallery-list__img" src="images/gallery/2.png" alt="Лимон">
           <div class="gallery-list__item__wrapper">
             <h6 class="gallery-list__title">Лимон, 1кг</h6>
             <p class="gallery-list__text">199 ₽ </p>
           </div>
         </li>
-        <li class="gallery-list__item">
+        <li class="gallery-list__item mix category-fruits">
           <span class="gallery-list__item--popular">ХИТ</span>
           <img class="gallery-list__img" src="images/gallery/3.png" alt="Питахайя">
           <div class="gallery-list__item__wrapper">
@@ -193,14 +194,14 @@
             <p class="gallery-list__text">1019 ₽ </p>
           </div>
         </li>
-        <li class="gallery-list__item">
+        <li class="gallery-list__item mix category-loose">
           <img class="gallery-list__img" src="images/gallery/4.png" alt="Кетчуп">
           <div class="gallery-list__item__wrapper">
             <h6 class="gallery-list__title">Кетчуп томатный детский органический Bio-Zentrale 500мл, 1 шт</h6>
             <p class="gallery-list__text">600 ₽ </p>
           </div>
         </li>
-        <li class="gallery-list__item">
+        <li class="gallery-list__item mix category-vegetables">
           <spam class="gallery-list__item--popular">хит</spam>
           <img class="gallery-list__img" src="images/gallery/5.png" alt="Морковь">
           <div class="gallery-list__item__wrapper">
@@ -208,7 +209,7 @@
             <p class="gallery-list__text">49 ₽ </p>
           </div>
         </li>
-        <li class="gallery-list__item gallery-list__item--discount30">
+        <li class="gallery-list__item gallery-list__item--discount30 mix category-drinks">
           <button class="gallery-list__item--discount">-30%</button>
           <img class="gallery-list__img" src="images/gallery/6.png" alt="сок">
           <div class="gallery-list__item__wrapper">
@@ -220,7 +221,7 @@
             </div>
           </div>
         </li>
-        <li class="gallery-list__item">
+        <li class="gallery-list__item mix category-loose">
           <button class="gallery-list__item--new">НОВИНКА</button>
           <img class="gallery-list__img" src="images/gallery/7.png" alt="Кофе">
           <div class="gallery-list__item__wrapper">
@@ -228,7 +229,7 @@
             <p class="gallery-list__text">877 ₽ </p>
           </div>
         </li>
-        <li class="gallery-list__item">
+        <li class="gallery-list__item mix category-vegetables">
           <button class="gallery-list__item--new">НОВИНКА</button>
           <img class="gallery-list__img" src="images/gallery/8.png" alt="Перец">
           <div class="gallery-list__item__wrapper">
@@ -331,6 +332,7 @@
   </footer>
 
   <script src="js/main.min.js"></script>
+  <script src="js/mixitup.min.js"></script>
   <script src="js/slick.min.js"></script>
 </body>
 

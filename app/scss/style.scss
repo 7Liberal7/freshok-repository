@@ -27,9 +27,20 @@
   &__info-item__link {
     display: flex;
     align-items: center;
+    transition: all 0.3s ease-in-out;
+
+    // просто color поставил и чет не работает поэтому all
+    &:hover {
+      color: $white;
+      opacity: 70%;
+    }
+
+    &:active {
+      color: $green-200;
+    }
   }
 
-  img {
+  &__info-img {
     margin-right: 12px;
   }
 
@@ -40,6 +51,15 @@
 
   &__about-item:not(:last-child) {
     margin-right: 24px;
+  }
+
+  &__about__link {
+    transition: box-shadow 0.3s ease-in-out;
+
+    &:focus {
+      box-shadow: 0 0 0 3px;
+      border-radius: 5px;
+    }
   }
 
   &__content {
@@ -63,6 +83,11 @@
     position: relative;
     cursor: pointer;
     margin-right: 30px;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $green-200;
+    }
 
     &-burger {
       width: 20px;
@@ -123,6 +148,30 @@
       height: 32px;
       width: 30px;
       position: relative;
+      transition: box-shadow 0.3s ease-in-out;
+
+      &:hover {
+        opacity: 60%;
+        color: $white;
+      }
+
+      &:active {
+        opacity: 10%;
+      }
+    }
+
+    &__link {
+      transition: box-shadow 0.3s ease-in-out;
+      display: block;
+      padding-top: 5px;
+      color: $white;
+      width: 35px;
+      height: 35px;
+
+      &:focus {
+        box-shadow: 0 0 0 3px;
+        border-radius: 5px;
+      }
     }
 
     &__item:not(:last-child) {
@@ -198,6 +247,13 @@
     left: 13px;
     top: 15px;
     cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+
+    // а не как у афтера не сделать? это же вроде не контентное изображение
+    &:active {
+      opacity: 50%;
+
+    }
   }
 
   &__input {
@@ -215,7 +271,46 @@
     background-color: $dark-800;
     border-radius: 5px;
     cursor: pointer;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    font-size: 14px;
   }
+}
+
+.slick-btn {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  border-radius: 5px;
+
+  &:disabled {
+    color: $silver-600;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 3px $green-900;
+  }
+
+  &:hover {
+    fill: $green-900;
+    background-color: $green-200;
+  }
+
+  &:active {
+    color: $green-900;
+    background-color: #F3F3F2;
+  }
+}
+
+.slick-prev {
+  left: 50px;
+}
+
+.slick-next {
+  right: 50px;
 }
 
 .discounts {
@@ -256,6 +351,7 @@
       right: 0;
       top: 0;
       z-index: -1;
+      position: absolute;
     }
   }
 
@@ -483,12 +579,17 @@
     color: $green-900;
     background-color: $white;
     border: 1px solid;
+
+    &:focus {
+      box-shadow: 0 0 0 3px $green-900;
+    }
   }
 }
 
 .filters {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 50px;
   justify-content: center;
 
   &__item:not(:last-child) {
@@ -500,8 +601,28 @@
     font-size: 15px;
     color: #505050;
     text-transform: uppercase;
-    margin-bottom: 50px;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      color: $green-900;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px $green-200;
+      border-radius: 5px;
+    }
+
+    &:active {
+      border-bottom: 3px solid $green-200;
+    }
   }
+
+
+}
+
+.mixitup-control-active {
+  border-bottom: 3px solid $green-200;
 }
 
 .form {
@@ -559,6 +680,16 @@
     top: 260px;
     opacity: 10%;
   }
+
+  &__link {
+    transition: box-shadow 0.3s ease-in-out;
+
+    &:focus {
+      box-shadow: 0 0 0 3px;
+      border-radius: 5px;
+    }
+  }
+
 
   &__top {
     display: flex;
@@ -619,6 +750,24 @@
       background-repeat: no-repeat;
       background-size: contain;
       position: absolute;
+      transition: opacity box-shadow 0.3s ease-in-out;
+      display: block;
+
+      &:hover {
+        opacity: 50%;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 3px $green-200;
+        border-radius: 5px;
+      }
+
+      &:active {
+        fill: $green-200;
+        // color: $green-200;
+        // background-color: $green-200;
+        // чет тут тоже хз, наверно надо через афтер вешать
+      }
     }
   }
 }
