@@ -1,0 +1,269 @@
+.header {
+  &__top {
+    padding: 14px 0;
+    background-color: $dark-800;
+    font-size: 13px;
+    line-height: 1;
+    color: $white;
+    font-weight: $fw-700;
+    font-family: $opensans;
+  }
+
+  &__address-svg {
+    left: 0;
+  }
+
+  &__tel-svg {
+    left: 10px;
+  }
+
+  &__top-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content {
+    background-color: $green-900;
+    padding: 25px;
+    font-weight: $fw-600;
+    font-family: $opensans;
+  }
+
+  &__burger {
+    width: 20px;
+    top: 24px;
+    left: 18px;
+    position: absolute;
+    z-index: 10;
+    background-color: $green-900;
+    height: 1px;
+
+    &::after,
+    &::before {
+      position: absolute;
+      background-color: $green-900;
+      content: "";
+      height: 1px;
+      width: 25px;
+      top: 7px;
+      left: 0;
+    }
+
+    &::after {
+      top: -7px;
+    }
+  }
+
+  &__content-inner {
+    display: flex;
+    line-height: 1.4;
+    align-items: center;
+  }
+
+  &__catalog {
+    max-width: 240px;
+    width: 100%;
+    border-radius: 5px;
+    height: 50px;
+    background-color: $white;
+    position: relative;
+    margin-right: 30px;
+    transition: background-color 0.3s ease-in-out;
+    font-weight: $fw-600;
+    letter-spacing: 0.05em;
+    font-family: $opensans;
+    &:hover {
+      background-color: $green-200;
+    }
+  }
+
+  &__products {
+    font-size: 14px;
+    color: $green-900;
+    padding: 15px 0 15px 15px;
+
+    &::after,
+    &::before {
+      position: absolute;
+      height: 1px;
+      width: 7px;
+      background-color: $green-900;
+      content: "";
+      top: 25px;
+      right: 20px;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+      right: 16px;
+    }
+  }
+
+  &__logo {
+    margin-right: 40px;
+  }
+}
+
+.header-info {
+  display: flex;
+  text-transform: uppercase;
+
+  &__item:not(:last-child) {
+    margin-right: 35px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease-in-out;
+    transition: border-radius 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+    position: relative;
+    padding-left: 45px;
+    padding: 5px 0 5px 45px;
+
+    &:focus {
+      box-shadow: 0 0 0 3px;
+      border-radius: 5px;
+    }
+
+    &:hover {
+      color: $white;
+      opacity: 70%;
+    }
+
+    &:active {
+      color: $green-200;
+    }
+  }
+}
+
+.header-about {
+  display: flex;
+  text-transform: uppercase;
+
+  &__item:not(:last-child) {
+    margin-right: 24px;
+  }
+
+  &__link {
+    transition: box-shadow 0.3s ease-in-out;
+    transition: border-radius 0.3s ease-in-out;
+    // почему-то на 1 ссылку не работает анимация и покажите еще как расположение консоли менять, допустим она слева, а я хочу ее на верх или вниз передвинуть
+    &:focus {
+      box-shadow: 0 0 0 3px;
+      border-radius: 5px;
+    }
+
+    &:hover {
+      box-shadow: 0 0 0 3px;
+      border-radius: 5px;
+    }
+
+    &:active {
+      box-shadow: 0 0 0 3px;
+      border-radius: 5px;
+    }
+  }
+}
+
+.search-form {
+  max-width: 576px;
+  width: 100%;
+  display: flex;
+  position: relative;
+  line-height: 1.4;
+  margin-right: 55px;
+
+  &::after {
+    width: 20px;
+    height: 20px;
+    background-image: url("../images/search.svg");
+    content: "";
+    position: absolute;
+    left: 13px;
+    top: 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &__input {
+    position: relative;
+    padding: 16px 15px 15px 51px;
+    width: 100%;
+    color: $dark-800;
+    letter-spacing: 0.1em;
+    font-weight: $fw-400;
+    font-family: $opensans;
+  }
+
+  &__btn {
+    padding: 15.5px 52px;
+    background-color: $dark-800;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    font-size: 14px;
+    font-family: $opensans;
+    font-weight: $fw-600;
+    &:focus {
+      opacity: 1;
+      box-shadow: 0 0 0 3px $silver-600;
+    }
+    &:hover {
+      background-color: rgba($dark-800, 0.85);
+    }
+    &:active {
+      color: rgba($white , 0.5);
+    }
+  }
+}
+.account-list {
+  display: flex;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
+  &__svg {
+    left: -4px;
+  }
+
+  &__link {
+    transition: box-shadow 0.3s ease-in-out;
+    display: block;
+    padding-top: 5px;
+    color: $white;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    transition: opacity 0.3s ease-in-out;
+    background-repeat: no-repeat;
+    background-size: contain;
+    // я чет не понял что там за фон
+    &:focus {
+      box-shadow: 0 0 0 3px;
+      border-radius: 5px;
+    }
+
+    &:active {
+      opacity: 50%;
+    }
+  }
+
+  &__number {
+    color: $red-900;
+    position: relative;
+    top: -10px;
+    left: -6px;
+    font-size: 10px;
+    z-index: 10;
+    padding: 3px;
+    border-radius: 50%;
+    background-color: $white;
+  }
+}
