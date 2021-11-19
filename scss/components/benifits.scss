@@ -1,0 +1,55 @@
+.benefits {
+  background-color: $silver-100;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px 0 30px;
+  }
+
+  &__item {
+    width: 290px;
+    color: $dark-500;
+    position: relative;
+    padding-left: 90px;
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+    &:first-child {
+      margin-left: auto;
+    }
+    &:last-child {
+      margin-right: auto;
+    }
+    &::after {
+      content: "";
+      width: 50px;
+      position: absolute;
+      height: 50px;
+      left: 15px;
+      top: 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  .benefits__item-scooter::after {
+    background-image: url("../images/info/scooter.svg");
+  }
+
+  .benefits__item-return::after {
+    background-image: url("../images/info/return-box.svg");
+  }
+
+  .benefits__item-hours::after {
+    background-image: url("../images/info/24-hours.svg");
+  }
+  &__title {
+    font-size: 16px;
+    font-weight: $fw-600;
+    font-family: $opensans;
+    margin-bottom: 8px;
+    color: $dark-900;
+  }
+}
