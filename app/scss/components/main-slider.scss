@@ -1,0 +1,91 @@
+.main-slider {
+  .slick__svg {
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    fill: $dark-500;
+    background-color: rgba($white, 0.9);
+    border-radius: 10px;
+    // хз че с цветами и анимацией, вроде svg вырезал без фона, а он все равно вместе с основным цветом меняется
+
+    &:focus {
+      box-shadow: 0 0 0 3px $green-900;
+    }
+
+    &:hover {
+      fill: $green-900;
+      // background-color: ;
+    }
+
+    &:active {
+      fill: $green-900;
+      // background-color: ;
+    }
+  }
+
+  .slick-btn {
+    z-index: 10;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .slick__svg-right {
+    right: 50px;
+    transform: rotate(180deg)  translateY(50%);
+  }
+
+  .slick__svg-left {
+    left: 50px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__item {
+    min-height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 102;
+    display: flex;
+    align-items: center;
+    padding-top: 142px;
+    // ну я хз как пофиксить, я просто буду при адаптиве уменьшать этот паддинг и высоту на брекпоинтах
+  }
+
+  &__content {
+    max-width: 1290px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 24px 19px;
+  }
+
+  &__title,
+  &__subtitle {
+    font-weight: $fw-900;
+    font-family: $ruda;
+    font-size: 60px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    display: block;
+    max-width: 950px;
+    color: $dark-500;
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+    color: $red-900;
+  }
+
+  &__text {
+    font-size: 16px;
+    color: $dark-500;
+    margin-bottom: 35px;
+  }
+}
