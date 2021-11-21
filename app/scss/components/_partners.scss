@@ -1,0 +1,25 @@
+.partners {
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1210px;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+  &__item{
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__link{
+    transition: opacity 0.3s ease-in-out;
+
+    &:hover{
+      opacity: 0.5;
+    }
+  }
+}
