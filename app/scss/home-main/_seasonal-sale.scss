@@ -1,0 +1,78 @@
+.seasonal-sale {
+  padding-bottom: 75px;
+
+  &__list {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__item {
+    width: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $dark-500;
+    font-size: 12px;
+    font-weight: $fw-700;
+    line-height: 1;
+    text-transform: uppercase;
+
+    &--big {
+      max-width: 630px;
+      grid-column: span 2;
+      width: 100%;
+      color: $white;
+    }
+  }
+}
+
+.event-card {
+  padding: 80px 0 85px 32px;
+  z-index: 10;
+  max-width: 242px;
+  letter-spacing: 0;
+
+  &--big {
+    max-width: 425px;
+  }
+
+  &__text {
+    letter-spacing: 0.1em;
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    font-family: $ruda;
+    font-weight: $fw-600;
+    font-size: 30px;
+    line-height: 1.4;
+    @include line-clamp(4);
+  }
+
+  &__link {
+    font-size: 14px;
+    position: relative;
+
+    &::after {
+      bottom: -7px;
+      content: "";
+      background-color: $dark-500;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      height: 2px;
+      // я хз как бордер боттом на 7 клеток подвинуть, так бы через него сделал
+    }
+
+    &--white {
+      &::after {
+        background-color: $white;
+      }
+    }
+  }
+}
