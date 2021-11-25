@@ -1,0 +1,159 @@
+.form {
+  line-height: 1;
+
+  &__label {
+    display: block;
+    margin-bottom: 18px;
+    font-weight: $fw-400;
+  }
+
+  &__field {
+    max-width: 180px;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-right: -5px;
+  }
+
+  &__field,
+  &__field::placeholder {
+    padding: 12px 6px;
+  }
+}
+
+.footer {
+  background-color: $dark-800;
+  color: $white;
+  padding-top: 30px;
+  z-index: 10;
+  font-weight: $fw-400;
+
+  &__link {
+    transition: box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+    &:focus {
+      box-shadow: 0 0 0 3px;
+      border-radius: 5px;
+    }
+
+    &:hover,
+    &:active {
+      opacity: 70%;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0 30px 0;
+  }
+
+  &__phone {
+    &:focus {
+      box-shadow: 0 0 0 3px;
+      border-radius: 5px;
+    }
+
+    &:hover,
+    &:active {
+      opacity: 70%;
+    }
+  }
+
+  .footer-about {
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+
+    &__item {
+      max-width: 150px;
+      &:not(:last-child) {
+        margin-right: 75px;
+      }
+    }
+  }
+
+  &__info {
+    font-weight: $fw-400;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__address {
+    margin-bottom: 20px;
+    padding-top: 20px;
+    // если на телефон прописать mb-20 не работает, поэтому pt
+  }
+
+  &__logo {
+    padding-top: 45px;
+    // я хз че за шиза, но без этого фокус срабатывает на 15px высоты
+  }
+
+  &__link {
+    display: block;
+    max-width: 150px;
+    // ну наверно миксин для этого есть, также как и строчки, потому что в футере же не может быть большого текста
+    &:focus {
+      box-shadow: 0 0 0 3px;
+      border-radius: 5px;
+    }
+
+    &:hover,
+    &:active {
+      opacity: 70%;
+    }
+  }
+}
+
+.footer-bottom {
+  position: relative;
+  &::before {
+    content: "";
+    z-index: -1;
+    width: 100%;
+    height: 1px;
+    background-color: $white;
+    top: 0;
+    opacity: 10%;
+    position: absolute;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0 12px;
+  }
+
+  &__list {
+    max-width: 135px;
+    width: 100%;
+    display: flex;
+  }
+
+  &__item {
+    // тут чет без абсолюта не отображаются
+    position: relative;
+    top: -7px;
+    left: -30px;
+  }
+  
+  &__link {
+    display: inline-block;
+    height: 29px;
+    width: 93px;
+    background-position: center;
+    background-repeat: no-repeat;
+    &:focus {
+      box-shadow: 0 0 0 3px;
+      border-radius: 5px;
+    }
+    &:hover,
+    &:active {
+      opacity: 70%;
+    }
+  }
+}

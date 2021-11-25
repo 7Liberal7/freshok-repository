@@ -1,0 +1,34 @@
+.partners {
+
+  padding: 55px 0;
+  
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__link {
+    transition: opacity 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  .slick-slide {
+    display: flex;
+  }
+
+  .slick-slider {
+    max-width: 1210px;
+    padding: 15px 0 20px;
+    margin: 0 auto;
+  }
+}

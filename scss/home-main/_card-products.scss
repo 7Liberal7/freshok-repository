@@ -1,0 +1,117 @@
+.card-product {
+  border: 1px solid rgba(17, 17, 17, 0.2);
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: box-shadow 0.5s ease-in;
+
+  &:hover {
+    box-shadow: 0 0 0 1px $green-900;
+  }
+
+  &__content {
+    padding: 22px 25px 20px 16px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  &__img {
+    padding-top: 57px;
+  }
+
+  &__button {
+    position: absolute;
+
+    &--favorite {
+      top: 15px;
+      right: 10px;
+    }
+  }
+
+  &__svg {
+    left: 8px;
+    top: 8px;
+    width: 16px;
+    height: 16px;
+  }
+
+  &__price {
+    color: $dark-500;
+    padding-left: 3px;
+    font-weight: $fw-400;
+    position: absolute;
+    bottom: 17px;
+    // абсолют, потому что почему-то не раскинул их justify-content: space-between;
+  }
+
+  &__info,
+  &__price {
+    line-height: 1;
+  }
+
+  &__price-old {
+    position: relative;
+    color: $silver-600;
+    padding-left: 4px;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 39px;
+      height: 1px;
+      background-color: $silver-600;
+      transform: rotate(-15deg);
+      bottom: 8px;
+      left: 0;
+    }
+  }
+
+  &__title {
+    font-size: 14px;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    @include line-clamp(3);
+    &:focus {
+      color: $green-900;
+      // я бы рамку сделал, но это не очень когда не 1 строчка
+    }
+
+    &:hover,
+    &:active {
+      opacity: 40%;
+      color: $green-900;
+    }
+  }
+
+  .modifiers {
+    &__item {
+        position: absolute;
+        padding: 1px 6px;
+        text-transform: uppercase;
+        border-radius: 5px;
+        color: $white;
+        font-size: 10px;
+        font-weight: $fw-700;
+        font-family: $opensans;
+        top: 10px;
+        left: 11px;
+
+      &--new {
+        background-color: $green-900;
+      }
+
+      &--popular {
+        background-color: $orange-900;
+      }
+
+      &--discount {
+        background-color: $red-900;
+      }
+    }
+
+    &__item:not(:first-child) {
+      top: 30px;
+      position: absolute;
+    }
+  }
+}
