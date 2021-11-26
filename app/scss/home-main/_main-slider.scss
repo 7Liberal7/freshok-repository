@@ -1,0 +1,99 @@
+.main-slider {
+  // не смог пофиксить выделение черным всего слайдере при фокусе, хз на какой класс написано, вроде там даже нет элементов на фокус реагирующих
+  .slick__svg {
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    fill: $dark-500;
+    background-color: rgba($white, 0.9);
+    border-radius: 10px;
+    padding: 14px 21px;
+    transition: background-color 0.3s ease-in-out, background-color 0.3s ease-in-out, fill 0.3s ease-in-out;
+
+    &:focus {
+      box-shadow: 0 0 0 3px $green-900;
+    }
+
+    &:hover {
+      background-color: $green-200;
+    }
+
+    &:hover,
+    &:active {
+      fill: $green-900;
+    }
+  }
+
+  .slick-btn {
+    z-index: 10;
+    display: block;
+    border-radius: 5px;
+    // transition: box-shadow 0.3s ease-in-out;
+
+    // &:focus {
+    //   box-shadow: 0 0 0 3px $green-900;
+    // }
+  }
+
+  .slick__svg-right {
+    right: 50px;
+    transform: rotate(180deg) translateY(50%);
+  }
+
+  .slick__svg-left {
+    left: 50px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .slick-initialized .slick-slide {
+    display: flex;
+  }
+
+  &__item {
+    min-height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 102;
+    display: flex;
+    align-items: center;
+  }
+
+  &__content {
+    max-width: 1290px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px 19px 25px;
+  }
+
+  &__title,
+  &__subtitle {
+    font-weight: $fw-900;
+    font-family: $ruda;
+    font-size: 51px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    display: block;
+    max-width: 950px;
+    color: $dark-500;
+    letter-spacing: 0;
+  }
+
+  &__subtitle {
+    margin-bottom: 25px;
+    color: $red-900;
+  }
+
+  &__text {
+    font-size: 16px;
+    letter-spacing: 0;
+    color: $dark-500;
+    margin-bottom: 35px;
+  }
+}
