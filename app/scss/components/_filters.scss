@@ -1,0 +1,32 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  justify-content: center;
+
+  &__item:not(:last-child) {
+    margin-right: 24px;
+  }
+
+  &__btn {
+    font-weight: $fw-700;
+    font-size: 15px;
+    color: $dark-500;
+    text-transform: uppercase;
+    transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+
+    &:focus {
+      box-shadow: 0 0 0 3px $green-200;
+      border-radius: 5px;
+    }
+
+    &:hover {
+      color: $green-900;
+    }
+
+    &:active,
+    .mixitup-control-active {
+      border-bottom: 3px solid $green-200;
+    }
+  }
+}
